@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:rgb(19, 19, 20)">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>House Price Prediction analysis</h2>
+            <h3>Year of House Bought</h3>
+            <input id="first" name="Year" type="number ">
+            <h3>What is the Current House Price?(In Ruppes)</h3><br><input id="second" name="Present_Price" required="required">
+            <h3>How many rooms house has?</h3><input id="third" name="Rooms_ava" required="required">
+            <h3>How much money did prievious owners sold house for ?</h3><br><input id="fourth" name="Owner" required="required">
+            <h3>What Is the House type?</h3><br><select name="House_Type" id="Type" required="required">
+                <option value="Mansion">Mansion</option>
+                <option value="Flat">Flat</option>
+                <option value="2 BHK House">2 BHK House</option>
+                <option value="Others">Others</option>
+
+            </select>
+            <h3>Are you A Broker or Owner</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Broker">Broker</option>
+                <option value="Owner">Owner</option>
+            </select>
+            <h3>Avalibilty of House</h3><br><select name="Avability" id="research" required="required">
+                <option value="Avaliable Now">Available Now</option>
+                <option value="Will be sold later">Will be sold later</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: rgb(209, 202, 203);
+            
+            
+            padding: 0px;
+        }
+        body {
+         background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60');
+         background-repeat: no-repeat;
+         background-attachment: fixed; 
+         background-size: cover;
+        }
+
+        #research {
+            font-size: 24px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: left;
+            background-color: rgb(18, 172, 77);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 18px;
+        }
+
+        #Type {
+            width: 83px;
+            height: 43px;
+            text-align: left;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #fuel:hover {
+            background-color: rgb(162, 194, 22);
+        }
+
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: right;
+            border-radius: 14px;
+            font-size: 22px;
+        }
+
+        #research:hover {
+            background-color: coral;
+        }
+
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: left;
+            border-radius: 14px;
+            font-size: 24px;
+        }
+
+        #resea:hover {
+            background-color: rgb(13, 9, 54);
+        }
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: right;
+            border-radius: 14px;
+            font-size: 23px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: left;
+        }
+    </style>
+    <style>
+        p {
+          background-image: url('https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg');
+        }
+        </style>
+</body>
+
+</html>
